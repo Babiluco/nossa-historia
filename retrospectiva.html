@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa História ♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF6F1;
+    --blush: #F2E0D8;
+    --rose: #C4756A;
+    --deep-rose: #8B3E35;
+    --terra: #C07A5A;
+    --sage: #8A9E8C;
+    --charcoal: #2C2A28;
+    --warm-white: #FDFAF7;
+    --gold: #C9A96E;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--charcoal);
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(196,117,106,0.18) 0%, transparent 65%),
+                radial-gradient(ellipse at 75% 30%, rgba(138,158,140,0.12) 0%, transparent 60%);
+  }
+
+  .hero-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 400;
+    color: var(--warm-white);
+    text-align: center;
+    line-height: 1.05;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--blush);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(250,246,241,0.5);
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 1.5rem;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(250,246,241,0.35);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeup 2s ease infinite;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: rgba(250,246,241,0.2);
+  }
+
+  @keyframes fadeup {
+    0%, 100% { opacity: 0.35; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 0.7; transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* DECORATIVE SEPARATOR */
+  .sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 2rem;
+    color: var(--rose);
+    font-size: 1.1rem;
+  }
+  .sep::before, .sep::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: clamp(60px, 15vw, 120px);
+    background: var(--rose);
+    opacity: 0.35;
+  }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    text-align: center;
+    color: var(--charcoal);
+    line-height: 1.15;
+  }
+
+  .section-heading em { font-style: italic; color: var(--deep-rose); }
+
+  /* PRIMEIRA FOTO — HERO FRAME */
+  .first-photo-section {
+    padding: 4rem 2rem 5rem;
+    background: var(--warm-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .frame-container {
+    margin-top: 3rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .frame-outer {
+    border: 2px solid var(--gold);
+    padding: 16px;
+    position: relative;
+    background: var(--warm-white);
+    box-shadow: 0 20px 60px rgba(44,42,40,0.12);
+  }
+
+  .frame-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--deep-rose);
+    border-style: solid;
+  }
+  .frame-corner.tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .frame-corner.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+  .frame-corner.bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+  .frame-corner.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+  .photo-placeholder {
+    width: clamp(280px, 70vw, 480px);
+    aspect-ratio: 3/4;
+    background: var(--blush);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--rose);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s;
+  }
+
+  .photo-placeholder.landscape {
+    aspect-ratio: 4/3;
+  }
+
+  .photo-placeholder.square {
+    aspect-ratio: 1/1;
+    width: clamp(220px, 50vw, 380px);
+  }
+
+  .photo-placeholder:hover { opacity: 0.88; }
+
+  .photo-placeholder input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photo-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-placeholder .placeholder-icon { font-size: 2.5rem; opacity: 0.5; }
+  .photo-placeholder .placeholder-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .frame-caption {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--deep-rose);
+    letter-spacing: 0.02em;
+  }
+
+  .frame-date-tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    opacity: 0.7;
+  }
+
+  /* TIMELINE JANTAR */
+  .jantar-section {
+    padding: 5rem 2rem;
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .jantar-section .section-label { color: var(--gold); }
+  .jantar-section .section-heading { color: var(--warm-white); }
+  .jantar-section .section-heading em { color: var(--blush); }
+
+  .jantar-grid {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 0 2rem;
+    max-width: 700px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .jantar-text {
+    padding: 2rem;
+    border: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .jantar-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--warm-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .jantar-text p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(253,250,247,0.6);
+  }
+
+  .jantar-line {
+    width: 2px;
+    height: 100%;
+    min-height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    justify-self: center;
+  }
+
+  .jantar-photo { position: relative; }
+
+  /* GALERIA */
+  .gallery-section {
+    padding: 5rem 2rem;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-grid {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .gallery-item { position: relative; overflow: hidden; }
+  .gallery-item.tall { grid-row: span 2; }
+
+  .gallery-item .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    min-height: 180px;
+  }
+
+  .gallery-item.tall .photo-placeholder {
+    aspect-ratio: unset;
+    height: 100%;
+    min-height: 380px;
+  }
+
+  /* FILHAS */
+  .filhas-section {
+    padding: 5rem 2rem;
+    background: var(--blush);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filhas-row {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 860px;
+  }
+
+  .filha-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .filha-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--warm-white);
+    box-shadow: 0 8px 30px rgba(139,62,53,0.15);
+    width: clamp(160px, 30vw, 220px);
+    aspect-ratio: 1/1;
+  }
+
+  .filha-frame .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: rgba(250,246,241,0.7);
+    color: var(--deep-rose);
+  }
+
+  .filha-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--deep-rose);
+    text-align: center;
+  }
+
+  /* CLOSING */
+  .closing-section {
+    min-height: 90vh;
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .closing-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(196,117,106,0.1) 0%, transparent 70%);
+  }
+
+  .closing-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--warm-white);
+    line-height: 1.5;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .closing-quote::before {
+    content: '"';
+    display: block;
+    font-size: 5rem;
+    line-height: 0.5;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-bottom: 1rem;
+    font-style: normal;
+  }
+
+  .closing-from {
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+  }
+
+  .hearts {
+    margin-top: 3rem;
+    display: flex;
+    gap: 0.6rem;
+    position: relative;
+  }
+
+  .heart {
+    width: 10px;
+    height: 10px;
+    background: var(--rose);
+    border-radius: 50%;
+    animation: pulse-heart 1.8s ease infinite;
+  }
+  .heart:nth-child(2) { animation-delay: 0.3s; background: var(--gold); }
+  .heart:nth-child(3) { animation-delay: 0.6s; background: var(--sage); }
+
+  @keyframes pulse-heart {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.5); opacity: 1; }
+  }
+
+  /* EDIT MODE LABEL */
+  .edit-tip {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--charcoal);
+    color: var(--warm-white);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    padding: 0.6rem 1rem;
+    border-radius: 100px;
+    border: 1px solid rgba(201,169,110,0.3);
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  /* EDITABLE TEXT */
+  [contenteditable] {
+    outline: none;
+    cursor: text;
+    border-bottom: 1px dashed rgba(201,169,110,0.3);
+    transition: border-color 0.2s;
+  }
+  [contenteditable]:hover, [contenteditable]:focus {
+    border-bottom-color: var(--gold);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .jantar-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem 0;
+    }
+    .jantar-line { display: none; }
+    .jantar-text { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-date">De dezembro 2024 - para Sempre</p>
+  <h1 class="hero-title">Nossa<br><em>História</em></h1>
+  <p class="hero-subtitle">
+    <span contenteditable>Barbara</span> &amp; <span contenteditable>Ana</span>
+  </p>
+  <div class="hero-scroll">Veja um pouco do nosso amor</div>
+</section>
+
+<!-- Cole isso onde quiser no site, por exemplo logo abaixo do hero -->
+<section style="padding: 3rem 2rem; background: var(--charcoal); display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+  <p style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold);">Juntas há</p>
+  <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+    <div style="text-align: center;">
+      <p id="cnt-dias" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; color: var(--warm-white); line-height: 1;">0</p>
+      <p style="font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-top: 4px;">dias</p>
+    </div>
+    <p style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); color: var(--rose); align-self: flex-start; padding-top: 4px;">:</p>
+    <div style="text-align: center;">
+      <p id="cnt-horas" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; color: var(--warm-white); line-height: 1;">00</p>
+      <p style="font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-top: 4px;">horas</p>
+    </div>
+    <p style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); color: var(--rose); align-self: flex-start; padding-top: 4px;">:</p>
+    <div style="text-align: center;">
+      <p id="cnt-min" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; color: var(--warm-white); line-height: 1;">00</p>
+      <p style="font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-top: 4px;">minutos</p>
+    </div>
+    <p style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); color: var(--rose); align-self: flex-start; padding-top: 4px;">:</p>
+    <div style="text-align: center;">
+      <p id="cnt-seg" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; color: var(--blush); line-height: 1;">00</p>
+      <p style="font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-top: 4px;">segundos</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const inicio = new Date('2024-12-11T00:00:00');
+  function atualizar() {
+    const agora = new Date();
+    const diff = agora - inicio;
+    const seg = Math.floor(diff / 1000) % 60;
+    const min = Math.floor(diff / 60000) % 60;
+    const horas = Math.floor(diff / 3600000) % 24;
+    const dias = Math.floor(diff / 86400000);
+    document.getElementById('cnt-dias').textContent = dias;
+    document.getElementById('cnt-horas').textContent = String(horas).padStart(2,'0');
+    document.getElementById('cnt-min').textContent = String(min).padStart(2,'0');
+    document.getElementById('cnt-seg').textContent = String(seg).padStart(2,'0');
+  }
+  atualizar();
+  setInterval(atualizar, 1000);
+})();
+</script>
+
+<!-- PRIMEIRA FOTO -->
+<section class="first-photo-section">
+  <p class="section-label">O começo de tudo</p>
+  <h2 class="section-heading">Nossa <em>primeira foto</em><br>juntas</h2>
+
+  <div class="frame-container">
+    <div class="frame-outer">
+      <div class="frame-corner tl"></div>
+      <div class="frame-corner tr"></div>
+      <div class="frame-corner bl"></div>
+      <div class="frame-corner br"></div>
+      <div class="photo-placeholder" id="ph-primeira">
+        <img src="primeirafoto.jpeg" alt="Nossa primeira foto">
+      </div>
+    </div>
+  </div>
+
+  <p class="frame-caption" contenteditable>
+    "Nossa primeira foto juntas, quando você aceitou fazer minha coisa favorita juntas"
+  </p>
+  <span class="frame-date-tag" contenteditable>Janeiro de 2025</span>
+</section>
+
+<div class="sep">♥</div>
+
+<!-- JANTAR -->
+<section class="jantar-section">
+  <p class="section-label">Uma noite especial</p>
+  <h2 class="section-heading">Nosso <em>primeiro jantar fora</em></h2>
+
+  <div class="jantar-grid">
+    <div class="jantar-text">
+      <h3 contenteditable>Nosso Ferro e Farinha</h3>
+      <p contenteditable>
+        Aquela noite que foi especial desde o início. A mesa, a luz, você toda linda, seu cabelo,
+        tudo em você me deixando com aquele friozinho gostoso na barriga, 
+        aquela mistura de ansiedade e nervosismo bom. Mas tudo perfeito com você do 
+        outro lado sorrindo pra mim. 
+      </p>
+    </div>
+    <div class="jantar-line"></div>
+    <div class="jantar-photo">
+      <div class="photo-placeholder landscape" id="ph-jantar">
+        <img src="primeirojantar.jpeg" alt="Nosso primeiro jantar">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep" style="background: var(--warm-white);">✦</div>
+
+<!-- GALERIA DE FOTOS -->
+<section class="gallery-section">
+  <p class="section-label">Nossos momentos</p>
+  <h2 class="section-heading"><em>A gente junto</em></h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <div class="photo-placeholder" id="ph-g1" style="min-height: 380px; aspect-ratio: unset; height: 100%;">
+        <img src="teamo (3).jpeg" alt="Momento 1">
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="photo-placeholder" id="ph-g2">
+        <img src="teamo (2).jpeg" alt="Momento 2">
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="photo-placeholder" id="ph-g3">
+        <img src="teamo (1).jpeg" alt="Momento 3">
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="photo-placeholder" id="ph-g4">
+        <img src="teamo (4).jpeg" alt="Momento 4">
+      </div>
+    </div>
+    <div class="gallery-item tall">
+      <div class="photo-placeholder" id="ph-g5" style="min-height: 380px; aspect-ratio: unset; height: 100%;">
+        <img src="teamo (5).jpeg" alt="Momento 5">
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="photo-placeholder" id="ph-g6">
+        <img src="teamo (6).jpeg" alt="Momento 6">
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="photo-placeholder" id="ph-g7">
+        <img src="teamo (7).jpeg" alt="Momento 7">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILHAS -->
+<section class="filhas-section">
+  <p class="section-label">As nossas filhas</p>
+  <h2 class="section-heading" style="color: var(--deep-rose);">O <em>amor</em> que<br>nos completa</h2>
+
+  <div class="filhas-row">
+    <div class="filha-card">
+      <div class="filha-frame">
+        <div class="photo-placeholder" id="ph-f1">
+          <img src="filha1.jpeg" alt="Filha 1">
+        </div>
+      </div>
+      <p class="filha-name" contenteditable>Nossa Margarida</p>
+    </div>
+    <div class="filha-card">
+      <div class="filha-frame">
+        <div class="photo-placeholder" id="ph-f2">
+          <img src="filha2.jpeg" alt="Filha 2">
+        </div>
+      </div>
+      <p class="filha-name" contenteditable>Nossa Ophélia</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="closing-section">
+  <p class="closing-quote" contenteditable>
+    Desde o dia em que realmente conheci você, nunca mais quis qualquer coisa que não fosse nós. 
+    Cada dia ao seu lado é a minha parte favorita. Obrigada por existir na minha vida.
+  </p>
+  <p class="closing-from" contenteditable>Com todo o meu amor, que o nosso sempre seja para sempre</p>
+  <div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+</section>
+
+<div class="edit-tip">✏️ Clique nos textos para editar</div>
+
+<script>
+
+</body>
+</html>
